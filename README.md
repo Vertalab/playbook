@@ -277,6 +277,9 @@ Good example of [README](https://github.com/Vertalab/guides/blob/master/readme-e
 
 * * *
 
+#### Server setup
+
+https://github.com/Vertalab/rails-react-es6-ansible-capistrano
 
 #### Include our default Ruby GEMs set.
 
