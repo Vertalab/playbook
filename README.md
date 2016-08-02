@@ -234,7 +234,6 @@ This document is created for each project by PM and reviewed by COO and contains
     *   In progress - list tasks which is currently in work
     *   Code review - list of tasks on the code review
     *   QA - list of tasks which passed Code review and need QA
-    *   Ready for Demo - list of which passed QA and ready to be presented to the customer
     *   Approved - Approved tasks by customer which are ready to be included to the upcoming release
 *   Trello card requirements (if a card doesn’t meet them it can’t be moved further that Backlog list):
     *   Feature card - must contain Acceptance criterias (checklist) approved by customer
