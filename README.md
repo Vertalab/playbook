@@ -234,6 +234,7 @@ This document is created for each project by PM and reviewed by COO and contains
     *   In progress - list tasks which is currently in work
     *   Code review - list of tasks on the code review
     *   QA - list of tasks which passed Code review and need QA
+    *   Ready for Demo - list of which passed QA and ready to be presented to the customer
     *   Approved - Approved tasks by customer which are ready to be included to the upcoming release
 *   Trello card requirements (if a card doesn’t meet them it can’t be moved further that Backlog list):
     *   Feature card - must contain Acceptance criterias (checklist) approved by customer
@@ -243,16 +244,12 @@ This document is created for each project by PM and reviewed by COO and contains
 *   Attach to the ticket all related docs and screenshots which might be helpful
 *   People assign themselves to tickets. When in doubt, do not assign a ticket to someone.
 *   When assigned to new feature ticket, [create a branch for it](#gitflow) and mention this branch in ticket description
-*   Use Trello bot to have clear view on deployments - Roman to describe.
+*   Use [Trello bot](https://github.com/Vertalab/deplobotre) to have clear view on deployments.
 
 
 * * *
 
-### DEVELOPMENT
-
-
-#### STARTING PROJECT
-
+### STARTING PROJECT
 
 
 #### README file.
@@ -268,62 +265,27 @@ It should include:
 
 Every week reread README to check if it up-to-date. Add information to README as soon as you feel it will be useful for rest of the team.
 
-###### refs<sup><small>*</small></sup>:
-
 Good example of [README](https://github.com/Vertalab/guides/blob/master/readme-example.md) to follow. 
 [http://tom.preston-werner.com/2010/08/23/readme-driven-development.html](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html) 
 [https://robots.thoughtbot.com/how-to-write-a-great-readme](https://robots.thoughtbot.com/how-to-write-a-great-readme)
 
 * * *
 
-#### Server setup
-
-https://github.com/Vertalab/rails-react-es6-ansible-capistrano
-
-#### Include our default Ruby GEMs set.
-
-Default gems:
-
-*   `gem 'haml'` - templating engine for HTML
-*   `gem 'coffee-rails'` - CoffeeScript adapter for the Rails
-*   `gem 'sass-rails'` - integration with Sass
-*   `gem 'dotenv-rails'` - load environment variables from .env file
-
-Monitoring/Debug:
-
-*   `PRY`
-*   `God`
-
-Testing:
-
-*   `Rspec`
-*   `Capybara`
-*   `gem 'shoulda-matchers'`
-*   `gem 'simplecov'`
-*   `gem 'factory_girl_rails'`
-*   `gem 'faker'`
-
-Code quality:
-
-*   `gem 'rubocop'`
-*   `haml-lint`
-*   `gem 'bullet'`
 
 
-###### refs<sup><small>*</small></sup>:
+#### Recommended Ruby GEMs list.
 
-[https://docs.google.com/a/vertaline.com/document/d/1O_XEDhMz3PmAbCJGNcOA-N9Mm-uq8XL60hbEwgKYubo/edit?usp=sharing](https://docs.google.com/a/vertaline.com/document/d/1O_XEDhMz3PmAbCJGNcOA-N9Mm-uq8XL60hbEwgKYubo/edit?usp=sharing)
+[Gems list discussion](https://docs.google.com/a/vertaline.com/document/d/1O_XEDhMz3PmAbCJGNcOA-N9Mm-uq8XL60hbEwgKYubo/edit?usp=sharing)
+
+[Gems list](https://docs.google.com/spreadsheets/d/1NrGzl-vDNeb8ywcCWMZkHc9OP4K_BNx90XHumPFRZvo/edit#gid=0)
 
 * * *
 
 
 #### Set envairment variables using `.env` file:
 
-###### refs*:
-
 [http://12factor.net/config](http://12factor.net/config) 
 [https://devcenter.heroku.com/articles/config-vars](https://devcenter.heroku.com/articles/config-vars)
-
 
 
 * * *
@@ -347,7 +309,6 @@ Code quality:
 *   create Pull Request
 *   repeat
 
-###### refs<sup><small>*</small></sup>:
 
 [http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html](http://reinh.com/blog/2009/03/02/a-git-workflow-for-agile-teams.html)  
 [https://github.com/thoughtbot/guides/tree/master/protocol/git](https://github.com/thoughtbot/guides/tree/master/protocol/git) 
@@ -379,11 +340,7 @@ Code quality:
 *   For testing JavaScript use Poltergeist or Capybara Webkit
 *   Use DatabaseCleaner
 
-###### refs*:
-
 [https://robots.thoughtbot.com/how-we-test-rails-applications](https://robots.thoughtbot.com/how-we-test-rails-applications)
-
-
 
 * * *
 
@@ -395,21 +352,18 @@ Code quality:
 *   Don't use sarcasm
 *   Don't take it personally
 *   During a review You should keep in mind next questions:
-
-*   Any code duplicaton there?
-*   Is code’s structure optimal?
-*   Any potential bugs?
-*   Is code efficient?
-*   Is method/variable naming good?
-*   Is class/function length fine?
-*   I there any commented code? Why?
-*   Is code readable?
-*   Are there any tests written for this feature?
-*   Any N+1 queries there?
+    *   Any code duplicaton there?
+    *   Is code’s structure optimal?
+    *   Any potential bugs?
+    *   Is code efficient?
+    *   Is method/variable naming good?
+    *   Is class/function length fine?
+    *   I there any commented code? Why?
+    *   Is code readable?
+    *   Are there any tests written for this feature?
+    *   Any N+1 queries there?
 
 *   Finish reviewning a pull request with a "Ready to merge" comment or similar.
-
-###### refs*:
 
 [http://pult.vertalab.com/pages/10](http://pult.vertalab.com/pages/10)
 [https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html](https://www.kevinlondon.com/2015/05/05/code-review-best-practices.html) 
@@ -419,13 +373,16 @@ Code quality:
 * * *
 
 
-#### Deployment
+### Server setup and deployment
 
+We use using Ansible for server setup. Our main hosting provider is DigitalOcean.
+
+https://github.com/Vertalab/rails-react-es6-ansible-capistrano
 
 * * *
 
 
-#### TOOLS
+### TOOLS
 
 Depending on preferences developers could choose to use Emacs or Vim as their main IDE.
 
@@ -440,4 +397,4 @@ Depending on preferences developers could choose to use Emacs or Vim as their ma
 
 #### Think twice on using those tools
 
-*   [Active Admin.](https://github.com/activeadmin/activeadmin)
+*   [Active Admin](https://github.com/activeadmin/activeadmin)
