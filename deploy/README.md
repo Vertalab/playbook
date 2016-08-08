@@ -1,31 +1,28 @@
-# Basic Deployment
+## Basic Deployment
 
-## Tools
+### Tools
 
 1. [Capistrano](http://capistranorb.com/)
 2. [Ansible](https://www.ansible.com/)
 
-## Servers
+### Servers
 
 1. [Nginx](https://nginx.org)
 2. [Puma](http://puma.io/)
 
-## Managers
+### Managers
 
-1. [RVM](https://rvm.io/)
-2. [NVM](https://github.com/creationix/nvm)
+1. [rbenv](https://github.com/rbenv/rbenv)
 
-## Gems
+### Gems
 
 1. [capistrano-rails](https://github.com/capistrano/rails)
-2. [capistrano-rvm](https://github.com/capistrano/rvm)
+2. [capistrano-rbenv](https://github.com/capistrano/rbenv)
 3. [capistrano3-puma](https://github.com/seuros/capistrano-puma)
-4. [capistrano-nvm](https://github.com/koenpunt/capistrano-nvm)
-5. [capistrano-npm](https://github.com/capistrano/npm)
 
-## Galaxies
+### Galaxies
 
 1. [ansible-role-nginx](https://github.com/geerlingguy/ansible-role-nginx)
 2. [postgresql](https://github.com/ANXS/postgresql)
-3. [rvm1-ansible](https://github.com/rvm/rvm1-ansible)
+3. [ansible-rbenv-role](https://github.com/zzet/ansible-rbenv-role)
 4. [ansible-role-security](https://github.com/geerlingguy/ansible-role-security)
