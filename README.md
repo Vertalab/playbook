@@ -384,17 +384,11 @@ https://github.com/Vertalab/rails-react-es6-ansible-capistrano
 
 ### TOOLS
 
-Depending on preferences developers could choose to use Emacs or Vim as their main IDE.
+Depending on preferences developers could choose any IDE, we recommend Atom or Vim.
 
-*   [Emacs Prelude](https://github.com/bbatsov/prelude)
 *   [Vim](http://www.vim.org/)
 *   [Atom](https://atom.io/)
 
 
 
 * * *
-
-
-#### Think twice on using those tools
-
-*   [Active Admin](https://github.com/activeadmin/activeadmin)
